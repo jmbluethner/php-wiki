@@ -21,6 +21,13 @@
      *  
      */
 
+    require "./scripts/php/functions.php";
+    $config = include('./config.php');
+    session_start();
+    if(!$_SESSION['login'] || !isset($_SESSION['username']) || !isset($_SESSION['avatar']) || !isset($_SESSION['mail'])) {
+        $_SESSION['login'] = false;;
+    }
     
+
 ?>
 
