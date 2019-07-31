@@ -12,7 +12,7 @@
         die('There was a problem with the connection to SQL. Tell the Admin about it!');
     }
 
-    $result = execSQL('SELECT * FROM users WHERE mail="$mail"',$conn);
+    $result = execSQL('SELECT mail FROM users WHERE mail="$mail"',$conn);
 
     if ($result->num_rows == 0) {
         echo "Mail not found in database!";
