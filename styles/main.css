@@ -1,0 +1,134 @@
+body, html {
+  padding: 0;
+  margin: 0;
+}
+h1 {
+  color: white;
+  font-size: 70px;
+}
+h2 {
+  color: white;
+  font-size: 30px;
+  letter-spacing: 3px;
+}
+h3 {
+  font-size: 22px;
+  letter-spacing: 3px;
+  font-weight: 500;
+}
+.pane {
+  background-color: rgb(30,30,30);
+  box-sizing: border-box;
+  padding: 10px;
+}
+.pane h3 {
+  font-weight: 200;
+}
+.pane h3, .pane p {
+  color: white;
+}
+p {
+  letter-spacing: 2px;
+}
+.pagehead {
+  width: 100%;
+  height: 700px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('https://live.staticflickr.com/130/376152628_249e3630c0_b.jpg');
+}
+.overlay {
+  width: 100%;
+  height: 100%;
+  background: #074af4; /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(7, 74, 244, 0.75) 0%, rgba(0, 178, 255, 0.75) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(7, 74, 244, 0.75) 0%,rgba(0, 178, 255, 0.75) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(7, 74, 244, 0.75) 0%,rgba(0, 178, 255, 0.75) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(7, 74, 244, 0.75)', endColorstr='rgba(0, 178, 255, 0.75)',GradientType=0 ); /* IE6-9 */
+}
+.pagehead_topcont {
+  display: inline-block;
+  transform: translateX(-50%);
+  margin-left: 50%;
+  margin-top: 240px;
+  text-align: center;
+}
+.pagehead_topcont button {
+  text-align: center;
+  font-size: 14px;
+  font-weight: lighter;
+  margin-top: 0px;
+  height: 35px;
+  width: 350px;
+  border: 1px solid white;
+  color: white;
+  line-height: 35px;
+  transition: .2s ease;
+}
+input.search {
+  background-color: white;
+  color: black;
+  text-align: center;
+  font-size: 16px;
+  height: 35px;
+  width: 350px;
+  margin-bottom:  0;
+}
+.pagehead_topcont button:hover {
+  background-color: white;
+  color: black;
+}
+.topmargin {
+  margin-top: 65px;
+}
+footer {
+  min-height: 100px;
+  width: 100%;
+  background-color: rgb(20,20,20);
+  box-sizing: border-box;
+  padding-top: 23px;
+  padding-bottom: 23px;
+}
+footer p {
+  color: rgb(200,200,200);
+  font-size: 10px;
+  display: block;
+  text-align: center;
+}
+footer .links {
+  display: block;
+  color: white;
+  font-size: 11px;
+  line-height: 14px;
+  letter-spacing: 2px;
+  text-align: center;
+}
+footer .links a {
+  color: white;
+  font-size: 12px;
+  line-height: 23px;
+  letter-spacing: 2px;
+}
+footer .links a:visited {
+  color: white;
+}
+.imagehead {
+  height: 200px;
+  width: 100%;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Wikimedia_Foundation_Servers-8055_35.jpg/1280px-Wikimedia_Foundation_Servers-8055_35.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.debug {
+  position: fixed;
+  bottom: 20px;
+  left: 10px;
+  display: inline-block;
+  padding: 10px;
+  background-color: rgb(200,0,0);
+  color: white;
+  font-family: 'Consolas', monospace;
+  font-size: 12px;
+}
