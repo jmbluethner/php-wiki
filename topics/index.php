@@ -35,6 +35,7 @@
     <link rel="stylesheet" href="../styles/skeleton.css" />
     <link rel="stylesheet" href="../styles/main.css" />
     <link rel="stylesheet" href="../styles/navbar.css" />
+    <meta charset="utf-8" />
   </head>
   <body>
     <div class="navbar_wrapper">
@@ -58,25 +59,46 @@
         // Roles: guest, member, root
         // Auch gibt es noch 'private' im Thread
 
-        if($role == "guest") {
-          $result = execSQL("SELECT * FROM threads WHERE NOT private=1 AND visibility='guest'",$conn);
-        } else if($role == "member") {
-          $result = execSQL("SELECT * FROM threads WHERE private='$username' OR visibility='guest' OR visibility='member'",$conn);
-        } else if($role == "root") {
-          $result = execSQL("SELECT * FROM threads",$conn);
-        } else {
-          die();
-        }
-        //$result = execSQL("SELECT * FROM threads WHERE visibility='$role'",$conn);
+        // Loop thru topics and fill in Threds
+        $result = execSQL("SELECT * FROM topics",$conn);
 
         while($row = $result->fetch_assoc()) {
-          $title = $row["title"];
-          $content = $row["content"];
           ?>
-          <h3><?php echo $title ?></h3>
-          <p><?php echo $content ?></p>
+          <div class="topic">
+            <h6><?php echo utf8_encode($row['name']); ?></h6>
+            <span><?php echo utf8_encode($row['description']); ?></span>
+          </div>
+          <div class="threadcontainer">
+            <?php
+              $name = utf8_encode($row['name']);
+              if($role == "guest") {
+                $result = execSQL("SELECT * FROM threads WHERE NOT private=1 AND visibility='guest' AND topic='$name'",$conn);
+              } else if($role == "member") {
+                $result = execSQL("SELECT * FROM threads WHERE private='$username' OR visibility='guest' OR visibility='member' AND topic='$name'",$conn);
+              } else if($role == "root") {
+                $result = execSQL("SELECT * FROM threads WHERE topic='$name'",$conn);
+              } else {
+                die();
+              }
+              //$result = execSQL("SELECT * FROM threads WHERE visibility='$role'",$conn);
+
+              while($row = $result->fetch_assoc()) {
+                $title = $row["title"];
+                $content = $row["content"];
+
+
+                ?>
+                <div class="thread">
+                  <h3><?php echo $title ?></h3>
+                  <p><?php echo $content ?></p>
+                </div>
+
+              <?php
+            }
+            ?>
+          </div>
           <?php
         }
-      ?>
+        ?>
     </div>
   </body>

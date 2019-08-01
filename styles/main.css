@@ -132,3 +132,51 @@ footer .links a:visited {
   font-family: 'Consolas', monospace;
   font-size: 12px;
 }
+.topic {
+  height: 75px;
+  width: 100%;
+  background-color: rgb(50,50,50);
+  box-sizing: border-box;
+  border: 2px solid rgb(5,5,5);
+  padding-left: 10px;
+  padding-right: 10px;
+  line-height: 50px;
+  border-radius: 2px;
+  display: block;
+}
+.topic h6 {
+  color: white;
+  font-weight: 600;
+  display: block;
+  height: 60px;
+  line-height: 50px;
+  font-size: 18px;
+  letter-spacing: 1px;
+  margin: 0;
+}
+.topic span {
+  display: block;
+  height: auto;
+  line-height: 50px;
+  color: white;
+  margin-left: 10px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  font-weight: 100;
+  margin: 0;
+  padding: 0;
+  margin-top: -34px;
+}
+.threadcontainer {
+  display: block;
+  margin-top: 20px;
+}
+.thread {
+  background-color: white;
+  box-sizing: border-box;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid black;
+  display: block;
+  padding-bottom: 0;
+}
